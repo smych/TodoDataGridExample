@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoDataGrid"
         mc:Ignorable="d"
-        Title="TodoDataGrid" Height="450" Width="800">
+        Title="TodoDataGrid" Height="450" Width="800" Loaded="Window_Loaded">
+    
+    <!-- url урока https://www.youtube.com/watch?v=Mb3S2IK3NzI&t=333s -->
+    
     <Grid>
+        <DataGrid x:Name="dgTodoList" FontSize="16" FontWeight="Bold" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="CreatingDate" Width="180"/>
+                <DataGridCheckBoxColumn IsReadOnly="False" Header="Done"  Width="80"/>
+                <DataGridTextColumn IsReadOnly="False" Header="Todo" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
         
     </Grid>
 </Window>
