@@ -16,12 +16,13 @@ using System.Windows.Shapes;
 
 namespace TodoDataGrid
 {
-    private BindingList<TodoDataGrid.Model.TodoModel> _todoDataGridList;
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BindingList<TodoDataGrid.Model.TodoModel> _todoDataGridList;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,7 +30,14 @@ namespace TodoDataGrid
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            _todoDataGridList = new BindingList<TodoDataGrid.Model.TodoModel>()
+            { 
+                new Model.TodoModel(){ Text="один"},
+                new Model.TodoModel(){ Text="два"},
+                new Model.TodoModel(){ Text="три"}
+            };
 
+            dgTodoList.ItemsSource = _todoDataGridList;
         }
     }
 }

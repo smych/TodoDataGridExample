@@ -10,11 +10,11 @@
     <!-- url урока https://www.youtube.com/watch?v=Mb3S2IK3NzI&t=333s -->
     
     <Grid>
-        <DataGrid x:Name="dgTodoList" FontSize="16" FontWeight="Bold" Margin="10">
+        <DataGrid x:Name="dgTodoList" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn IsReadOnly="True" Header="CreatingDate" Width="180"/>
-                <DataGridCheckBoxColumn IsReadOnly="False" Header="Done"  Width="80"/>
-                <DataGridTextColumn IsReadOnly="False" Header="Todo" Width="*"/>
+                <DataGridTextColumn IsReadOnly="True" Header="CreatingDate" Width="180" Binding="{Binding Path=CreationDate}" />
+                <DataGridCheckBoxColumn IsReadOnly="False" Header="Done"  Width="80" Binding="{Binding Path=IsDone}" />
+                <DataGridTextColumn IsReadOnly="False" Header="Todo" Width="*" Binding="{Binding Path=Text}"/>
             </DataGrid.Columns>
         </DataGrid>
         
